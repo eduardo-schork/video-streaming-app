@@ -1,16 +1,11 @@
-import { Paper } from '@mui/material';
-import { MouseEventHandler } from 'react';
+import { Paper, PaperProps } from '@mui/material';
 
-function BoxContainer({
-  classname,
-  children,
-  onClick,
-  ...props
-}: {
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+interface IBoxContainerProps extends PaperProps {
   classname?: string;
-  children: React.ReactNode;
-  onClick?: MouseEventHandler<HTMLDivElement>;
-}): JSX.Element {
+}
+
+function BoxContainer({ classname, children, onClick, ...props }: IBoxContainerProps): JSX.Element {
   return (
     <Paper onClick={onClick} className={classname} elevation={1} {...props}>
       {children}

@@ -8,16 +8,22 @@ import Spacings from '@styles/spacings';
 
 export const Container = styled(BoxContainer)`
   && {
+    display: flex;
     width: 16vw;
+    height: 14vw;
     flex-direction: column;
     background-color: ${Colors.whiteGrey};
-    display: flex;
   }
+`;
+
+export const InfoContainer = styled.div`
+  padding: 2%;
 `;
 
 export const MovieImage = styled.img`
   max-width: 100%;
   max-height: 100%;
+  height: 9vw;
   border-radius: ${Spacings.medium};
 `;
 

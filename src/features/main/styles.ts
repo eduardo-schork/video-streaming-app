@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import Colors from '@styles/colors';
 
-export const Container = styled.div`
-  background-color: ${Colors.darkGrey};
-  width: 100vw;
-  height: 100vh;
-`;
-
+// eslint-disable-next-line import/prefer-default-export
 export const ListContainer = styled.div`
-  display: flex;
-  padding: 1%;
+  width: 100%;
+  height: 100%;
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 4% 0;
 `;
