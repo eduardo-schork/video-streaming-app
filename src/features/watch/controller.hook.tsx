@@ -10,7 +10,7 @@ const useController = () => {
 
   const videoPath = id && movie && `${import.meta.env.VITE_API_URL}${ApiPath.stream}/${movie.id}`;
 
-  return { videoPath };
+  return { videoPath, movie };
 };
 
 export default useController;

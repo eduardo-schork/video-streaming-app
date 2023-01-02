@@ -1,18 +1,24 @@
-/* eslint-disable jsx-a11y/media-has-caption */
+import BaseLayout from '@components/base-layout';
+
 import useController from './controller.hook';
-import { Container } from './styles';
+
+import { TitleText, VideoContainer, VideoInfoContainer, VideoSource } from './styles';
 
 function WatchPage() {
-  const { videoPath } = useController();
+  const { videoPath, movie } = useController();
 
   return (
-    <Container>
+    <BaseLayout>
+      {/* TODO atomize video container */}
       {videoPath && (
-        <video id={'videoPlayer'} width={'650'} controls autoPlay>
-          <source src={videoPath} type={'video/mp4'} />
-        </video>
+        <VideoContainer id={'videoPlayer'} controls autoPlay>
+          <VideoSource src={videoPath} type={'video/mp4'} />
+        </VideoContainer>
       )}
-    </Container>
+      <VideoInfoContainer>
+        <TitleText variant={'h5'}>{movie?.title}</TitleText>
+      </VideoInfoContainer>
+    </BaseLayout>
   );
 }
 

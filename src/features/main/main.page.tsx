@@ -1,20 +1,20 @@
+import BaseLayout from '@components/base-layout';
 import useController from './controller.hook';
 
-import VideoCard from './components/video-card';
-
-import { Container, ListContainer } from './styles';
+import { ListContainer } from './styles';
+import VideoCard from './components/video-card/video-card';
 
 function MainPage() {
   const { movies, handleOnClickMovie } = useController();
 
   return (
-    <Container>
+    <BaseLayout>
       <ListContainer>
         {movies.map((movie) => (
           <VideoCard onClick={handleOnClickMovie} key={movie.id} movie={movie} />
         ))}
       </ListContainer>
-    </Container>
+    </BaseLayout>
   );
 }
 
