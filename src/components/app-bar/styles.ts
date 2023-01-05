@@ -6,7 +6,7 @@ import BoxContainer from '../box-container';
 
 export const Container = styled(BoxContainer)`
   && {
-    height: 80px !important;
+    height: 60;
     width: 100%;
     display: flex;
     border-radius: 0;

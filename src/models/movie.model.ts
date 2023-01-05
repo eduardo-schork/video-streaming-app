@@ -9,6 +9,8 @@ export type MovieModelApi = {
   url: string;
   title: string;
   description?: string;
+  categories?: string[];
+  snapshots?: string[];
 };
 
 export function normalizeMovie(input: MovieModelApi) {
@@ -21,6 +23,8 @@ export function normalizeMovie(input: MovieModelApi) {
     url: input?.url,
     title: input?.title,
     description: input?.description,
+    categories: input?.categories,
+    snapshots: input?.snapshots,
     path: '/movie',
   };
 }

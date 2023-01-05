@@ -10,9 +10,8 @@ export const Container = styled(BoxContainer)`
   && {
     display: flex;
     width: 16vw;
-    height: 14vw;
     flex-direction: column;
-    background-color: ${Colors.whiteGrey};
+    background-color: ${Colors.darkGrey};
   }
 `;
 
@@ -23,12 +22,17 @@ export const InfoContainer = styled.div`
 export const MovieImage = styled.img`
   max-width: 100%;
   max-height: 100%;
-  height: 9vw;
   border-radius: ${Spacings.medium};
+`;
+
+export const MovieImageContainer = styled.div`
+  display: flex;
+  height: 9vw;
 `;
 
 export const MovieTitle = styled(Text)`
   && {
+    font-weight: bold;
     padding: ${Spacings.small};
     color: ${Colors.white};
   }

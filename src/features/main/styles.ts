@@ -8,5 +8,5 @@ export const ListContainer = styled.div`
 
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 4% 0;
+  gap: 1% 1%;
 `;

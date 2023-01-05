@@ -1,4 +1,4 @@
-import { ApiModel } from '@src/models';
+import { ApiModel } from '@models';
 
 // eslint-disable-next-line import/no-cycle
 import AxiosAdapter from './axios';
