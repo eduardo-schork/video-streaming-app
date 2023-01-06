@@ -9,9 +9,10 @@ import Spacings from '@styles/spacings';
 export const Container = styled(BoxContainer)`
   && {
     display: flex;
-    width: 16vw;
+    min-width: 16vw;
+    max-width: 16vw;
     flex-direction: column;
-    background-color: ${Colors.darkGrey};
+    background-color: ${Colors.whiteGrey};
   }
 `;
 

@@ -1,6 +1,7 @@
 import { Category } from './category.model';
+import { Movie, MovieModelApi, normalizeMovie } from './movie.model';
 
-export type MovieModelApi = {
+export type MoviesGroupedModelApi = {
   _id: string;
   createdAt: number;
   createdBy: string;
@@ -8,26 +9,20 @@ export type MovieModelApi = {
   updatedBy?: string;
   deletedAt?: number;
   deletedBy?: string;
-  url: string;
   title: string;
-  description?: string;
-  categories?: Category[];
-  snapshots?: string[];
+  movies: MovieModelApi[];
 };
 
-export function normalizeMovie(input: MovieModelApi) {
+export function normalizeMovieGrouped(input: MoviesGroupedModelApi) {
   return {
     // eslint-disable-next-line no-underscore-dangle
     id: input?._id,
     createdAt: input?.createdAt,
     createdBy: input?.createdBy,
     deletedAt: input?.deletedAt,
-    url: input?.url,
     title: input?.title,
-    description: input?.description,
-    categories: input?.categories,
-    snapshots: input?.snapshots,
+    movies: input?.movies.map((movie) => normalizeMovie(movie)),
   };
 }
 
-export type Movie = ReturnType<typeof normalizeMovie>;
+export type MovieGrouped = ReturnType<typeof normalizeMovieGrouped>;

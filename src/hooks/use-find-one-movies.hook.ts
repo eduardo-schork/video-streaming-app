@@ -1,7 +1,7 @@
 import HttpRequest from '@infra/http-request';
 import { useCallback, useEffect, useState } from 'react';
 
-import { normalizeMovie } from '@models/movie.model';
+import { MovieModelApi, normalizeMovie } from '@models/movie.model';
 import { Model } from '@models';
 import ApiRoutes from '@constants/api-routes';
 
@@ -12,7 +12,7 @@ const useFindOneMovie = ({ movieId }: { movieId?: string }) => {
     if (!movieId) return;
 
     const apiPath = ApiRoutes.MOVIE;
-    const fetchedData = await HttpRequest.findOne({ apiPath, id: movieId });
+    const fetchedData = (await HttpRequest.findOne({ apiPath, id: movieId })) as MovieModelApi;
 
     const normalizedData = normalizeMovie(fetchedData);
 

@@ -1,19 +1,16 @@
 import BaseLayout from '@components/base-layout';
 import useController from './controller.hook';
-
-import { ListContainer } from './styles';
-import VideoCard from './components/video-card/video-card';
+import { Container } from './styles';
+import VideosList from './components/videos-list/videos-list';
 
 function MainPage() {
-  const { movies, handleOnClickMovie } = useController();
+  const { moviesGrouped, handleOnClickMovie } = useController();
 
   return (
     <BaseLayout>
-      <ListContainer>
-        {movies.map((movie) => (
-          <VideoCard onClick={handleOnClickMovie} key={movie.id} movie={movie} />
-        ))}
-      </ListContainer>
+      <Container>
+        <VideosList handleOnClickMovie={handleOnClickMovie} moviesGrouped={moviesGrouped} />
+      </Container>
     </BaseLayout>
   );
 }

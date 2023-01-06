@@ -1,8 +1,8 @@
+import useFindAllMoviesGrouped from '@hooks/use-find-all-movies-grouped.hook';
 import { useNavigate } from 'react-router-dom';
-import useFindAllMovies from '@hooks/use-find-all-movies.hook';
 
 const useController = () => {
-  const { data } = useFindAllMovies();
+  const { data } = useFindAllMoviesGrouped();
 
   const navigate = useNavigate();
 
@@ -10,7 +10,7 @@ const useController = () => {
     navigate(`/watch/${id}`);
   }
 
-  return { movies: data, handleOnClickMovie };
+  return { moviesGrouped: data, handleOnClickMovie };
 };
 
 export default useController;

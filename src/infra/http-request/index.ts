@@ -1,5 +1,6 @@
 import { ApiModel } from '@models';
 
+// TODO fix this cycle import
 // eslint-disable-next-line import/no-cycle
 import AxiosAdapter from './axios';
 
