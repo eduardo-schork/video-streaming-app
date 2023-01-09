@@ -1,4 +1,4 @@
-export type CategoryModelApi = {
+export type CategoryApi = {
   _id: string;
   createdAt: number;
   createdBy: string;
@@ -9,7 +9,7 @@ export type CategoryModelApi = {
   title: string;
 };
 
-export function normalizeCategory(input: CategoryModelApi) {
+export function normalizeCategory(input: CategoryApi) {
   return {
     // eslint-disable-next-line no-underscore-dangle
     id: input?._id,

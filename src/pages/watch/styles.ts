@@ -16,5 +16,5 @@ export const TitleText = styled(Text)`
 
 export const VideoInfoContainer = styled.div`
   width: 100%;
-  padding: 1% 1%;
+  padding: 2% 2%;
 `;

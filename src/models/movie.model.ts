@@ -1,6 +1,6 @@
 import { Category } from './category.model';
 
-export type MovieModelApi = {
+export type MovieApi = {
   _id: string;
   createdAt: number;
   createdBy: string;
@@ -15,7 +15,7 @@ export type MovieModelApi = {
   snapshots?: string[];
 };
 
-export function normalizeMovie(input: MovieModelApi) {
+export function normalizeMovie(input: MovieApi) {
   return {
     // eslint-disable-next-line no-underscore-dangle
     id: input?._id,

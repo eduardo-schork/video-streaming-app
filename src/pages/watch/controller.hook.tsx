@@ -1,5 +1,5 @@
-import useFindOneMovie from '@hooks/use-find-one-movies.hook';
 import ApiRoutes from '@constants/api-routes';
+import useFindOneMovie from '@hooks/movies/use-find-one-movies.hook';
 
 import { useParams } from 'react-router-dom';
 

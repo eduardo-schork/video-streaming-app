@@ -7,7 +7,7 @@ function VideoCard({ movie, onClick }: VideoCardProps): JSX.Element {
   const { snapshotPath, handleOnMouseOver, handleOnMouseOut } = useController(movie);
 
   return (
-    <Container elevation={2} onClick={() => onClick(movie.id)}>
+    <Container elevation={2} onClick={() => onClick && onClick(movie.id)}>
       <MovieImageContainer>
         {snapshotPath && (
           <MovieImage

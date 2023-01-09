@@ -1,7 +1,7 @@
 import HttpRequest from '@infra/http-request';
 import { useEffect, useState } from 'react';
 
-import { Movie, MovieModelApi, normalizeMovie } from '@models/movie.model';
+import { Movie, MovieApi, normalizeMovie } from '@models/movie.model';
 
 import ApiRoutes from '@constants/api-routes';
 
@@ -10,7 +10,7 @@ const useFindAllMovies = () => {
 
   const fetchData = async () => {
     const apiPath = ApiRoutes.MOVIE;
-    const fetchedData = (await HttpRequest.findAll({ apiPath })) as MovieModelApi[];
+    const fetchedData = (await HttpRequest.findAll({ apiPath })) as MovieApi[];
 
     const normalizedData = fetchedData.map((item) => normalizeMovie(item));
 

@@ -1,7 +1,6 @@
-import { Category } from './category.model';
-import { Movie, MovieModelApi, normalizeMovie } from './movie.model';
+import { MovieApi, normalizeMovie } from './movie.model';
 
-export type MoviesGroupedModelApi = {
+export type MoviesByCategoryApi = {
   _id: string;
   createdAt: number;
   createdBy: string;
@@ -10,10 +9,10 @@ export type MoviesGroupedModelApi = {
   deletedAt?: number;
   deletedBy?: string;
   title: string;
-  movies: MovieModelApi[];
+  movies: MovieApi[];
 };
 
-export function normalizeMovieGrouped(input: MoviesGroupedModelApi) {
+export function normalizeMoviesByCategory(input: MoviesByCategoryApi) {
   return {
     // eslint-disable-next-line no-underscore-dangle
     id: input?._id,
@@ -25,4 +24,4 @@ export function normalizeMovieGrouped(input: MoviesGroupedModelApi) {
   };
 }
 
-export type MovieGrouped = ReturnType<typeof normalizeMovieGrouped>;
+export type MoviesByCategory = ReturnType<typeof normalizeMoviesByCategory>;

@@ -1,5 +1,5 @@
 import { MoviesListContainer, VideoCardContainer } from './styles';
-import VideoCard from '../video-card/video-card';
+import VideoCard from '@components/video-card/video-card';
 import { VideoListItemProps } from './types';
 
 function VideoListItem({ handleOnClickMovie, movieGrouped }: VideoListItemProps) {

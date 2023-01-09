@@ -20,7 +20,7 @@
       "@*": ["*", "src/*"],
       "@assets/*": ["*", "src/assets/*"],
       "@components/*": ["*", "src/components/*"],
-      "@features/*": ["*", "src/features/*"],
+      "@pages/*": ["*", "src/pages/*"],
       "@infra/*": ["*", "src/infra/*"],
       "@models/*": ["*", "src/models/*"],
       "@hooks/*": ["*", "src/hooks/*"],

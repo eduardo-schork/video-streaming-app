@@ -1,8 +1,8 @@
-import useFindAllMoviesGrouped from '@hooks/use-find-all-movies-grouped.hook';
+import useFindAllMoviesByCategory from '@hooks/movies/use-find-all-movies-by-category.hook';
 import { useNavigate } from 'react-router-dom';
 
 const useController = () => {
-  const { data } = useFindAllMoviesGrouped();
+  const { data } = useFindAllMoviesByCategory();
 
   const navigate = useNavigate();
 
