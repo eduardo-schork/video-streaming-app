@@ -15,6 +15,17 @@ export const Container = styled(BoxContainer)`
     background-color: ${Colors.whiteGrey};
   }
 `;
+// TODO /\ recieve variant by props and render conditional styles
+// EX:
+// ${(props) => props} {
+//   &:hover {
+//     background-color: red;
+//   }
+
+//   &:active {
+//     background-color: blue;
+//   }
+// }
 
 export const InfoContainer = styled.div`
   padding: 2%;

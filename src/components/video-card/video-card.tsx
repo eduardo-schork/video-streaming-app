@@ -3,11 +3,11 @@ import { Container, InfoContainer, MovieImage, MovieImageContainer, MovieSubtitl
 import useController from './controller.hook';
 import { memo } from 'react';
 
-function VideoCard({ movie, onClick }: VideoCardProps): JSX.Element {
+function VideoCard({ className, movie, onClick, ...props }: VideoCardProps): JSX.Element {
   const { snapshotPath, handleOnMouseOver, handleOnMouseOut } = useController(movie);
 
   return (
-    <Container elevation={2} onClick={() => onClick && onClick(movie.id)}>
+    <Container className={className} elevation={2} onClick={() => onClick && onClick(movie.id)} {...props}>
       <MovieImageContainer>
         {snapshotPath && (
           <MovieImage

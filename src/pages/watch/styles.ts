@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 export const VideoContainer = styled.video`
   max-width: 100%;
-  max-height: 100%;
-  height: 60%;
+  max-height: 75vh;
+  height: 75vh;
 `;
 
 export const VideoSource = styled.source``;
@@ -16,5 +16,14 @@ export const TitleText = styled(Text)`
 
 export const VideoInfoContainer = styled.div`
   width: 100%;
-  padding: 2% 2%;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const VideoTitleContainer = styled.div`
+  padding: 2%;
+  display: flex;
+  width: 80%;
+  flex-direction: column;
 `;

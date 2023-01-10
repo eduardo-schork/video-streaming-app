@@ -5,7 +5,7 @@ import ApiRoutes from '@constants/api-routes';
 
 import { MoviesByCategory, MoviesByCategoryApi, normalizeMoviesByCategory } from '@models/movies-grouped';
 
-const useFindAllMoviesGrouped = () => {
+const useFindAllMoviesByCategory = () => {
   const [data, setData] = useState<MoviesByCategory[]>([]);
 
   const fetchData = async () => {
@@ -27,4 +27,4 @@ const useFindAllMoviesGrouped = () => {
   };
 };
 
-export default useFindAllMoviesGrouped;
+export default useFindAllMoviesByCategory;

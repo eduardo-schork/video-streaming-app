@@ -1,4 +1,4 @@
-import { Category } from './category.model';
+import { CategoryApi, normalizeCategory } from './category.model';
 
 export type MovieApi = {
   _id: string;
@@ -11,7 +11,7 @@ export type MovieApi = {
   url: string;
   title: string;
   description?: string;
-  categories?: Category[];
+  categories?: CategoryApi[];
   snapshots?: string[];
 };
 
@@ -25,7 +25,7 @@ export function normalizeMovie(input: MovieApi) {
     url: input?.url,
     title: input?.title,
     description: input?.description,
-    categories: input?.categories,
+    categories: input?.categories && input?.categories.map((category) => normalizeCategory(category)),
     snapshots: input?.snapshots,
   };
 }
