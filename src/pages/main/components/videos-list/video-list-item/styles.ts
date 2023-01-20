@@ -12,7 +12,7 @@ export const MoviesListContainer = styled.div`
   display: flex;
   flex-direction: row;
   overflow-y: auto;
-  ::-webkit-scrollbar {
-    display: none;
-  }
+  // ::-webkit-scrollbar {
+  //   display: none;
+  // }
 `;

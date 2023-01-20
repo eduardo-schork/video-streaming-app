@@ -1,9 +1,9 @@
 import HttpRequest from '@infra/http-request';
 import { useEffect, useState } from 'react';
 
-import ApiRoutes from '@constants/api-routes';
+import ApiRoutes from '@shared/constants/api-routes';
 
-import { MoviesByCategory, MoviesByCategoryApi, normalizeMoviesByCategory } from '@models/movies-grouped';
+import { MoviesByCategory, MoviesByCategoryApi, normalizeMoviesByCategory } from '@shared/models/movies-grouped';
 
 const useFindAllMoviesByCategory = () => {
   const [data, setData] = useState<MoviesByCategory[]>([]);

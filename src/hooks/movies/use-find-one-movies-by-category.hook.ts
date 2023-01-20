@@ -1,8 +1,8 @@
 import HttpRequest from '@infra/http-request';
 import { useCallback, useEffect, useState } from 'react';
 
-import ApiRoutes from '@constants/api-routes';
-import { MoviesByCategory, MoviesByCategoryApi, normalizeMoviesByCategory } from '@models/movies-grouped';
+import ApiRoutes from '@shared/constants/api-routes';
+import { MoviesByCategory, MoviesByCategoryApi, normalizeMoviesByCategory } from '@shared/models/movies-grouped';
 
 const useFindOneMoviesByCategory = ({ categoryId }: { categoryId?: string }) => {
   const [data, setData] = useState<MoviesByCategory>();

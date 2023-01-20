@@ -1,4 +1,4 @@
-import { ApiModel } from '@models';
+import { ApiModel } from '@shared/models';
 
 export interface HttpRequestPort {
   findAll({ id, apiPath }: { id?: string; apiPath: string }): Promise<ApiModel[]>;

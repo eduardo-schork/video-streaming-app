@@ -1,4 +1,4 @@
-import { Movie } from '@models/movie.model';
+import { Movie } from '@shared/models/movie.model';
 
 interface VideoCardProps {
   movie: Movie;

@@ -1,8 +1,8 @@
 import HttpRequest from '@infra/http-request';
 import { useCallback, useEffect, useState } from 'react';
 
-import { Movie, MovieApi, normalizeMovie } from '@models/movie.model';
-import ApiRoutes from '@constants/api-routes';
+import { Movie, MovieApi, normalizeMovie } from '@shared/models/movie.model';
+import ApiRoutes from '@shared/constants/api-routes';
 
 const useFindOneMovie = ({ movieId }: { movieId?: string }) => {
   const [data, setData] = useState<Movie>();

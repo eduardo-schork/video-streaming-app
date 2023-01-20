@@ -1,13 +1,12 @@
+import Colors from '@styles/colors';
+import Spacings from '@styles/spacings';
 import BaseLayout from '@components/base-layout';
 
-import useController from './controller.hook';
-
 import { TitleText, VideoContainer, VideoInfoContainer, VideoSource, VideoTitleContainer } from './styles';
+
+import useController from './controller.hook';
 import RelatedVideosList from './related-videos-list';
-import Spacings from '@styles/spacings';
-import Colors from '@styles/colors';
-import Text from '@components/text';
-import Divider from '@components/divider';
+import CommentsList from './comments-list/comments-list';
 
 function WatchPage() {
   const { videoPath, movie, relatedVideos, handleOnClickMovie, commentsByMovie } = useController();
@@ -29,26 +28,11 @@ function WatchPage() {
           </div>
           <div
             style={{
-              display: 'flex',
               background: Colors.whiteGrey,
-              height: '100%',
-              borderRadius: Spacings.medium,
-              flexDirection: 'column',
-              padding: '2%',
+              borderRadius: Spacings.extraLarge,
             }}
           >
-            {commentsByMovie.map((comment) => {
-              return (
-                <div style={{ padding: '1% 0%' }}>
-                  <Text>{comment.text}</Text>
-                  <div style={{ flexDirection: 'row', display: 'flex' }}>
-                    <Text>{comment.createdBy}</Text>
-                    {/* <Divider orientation={'vertical'} /> */}
-                    <Text>{comment.createdAt}</Text>
-                  </div>
-                </div>
-              );
-            })}
+            <CommentsList comments={commentsByMovie} />
           </div>
         </VideoTitleContainer>
 

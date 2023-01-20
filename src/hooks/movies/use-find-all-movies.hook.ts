@@ -1,9 +1,9 @@
 import HttpRequest from '@infra/http-request';
 import { useEffect, useState } from 'react';
 
-import { Movie, MovieApi, normalizeMovie } from '@models/movie.model';
+import { Movie, MovieApi, normalizeMovie } from '@shared/models/movie.model';
 
-import ApiRoutes from '@constants/api-routes';
+import ApiRoutes from '@shared/constants/api-routes';
 
 const useFindAllMovies = () => {
   const [data, setData] = useState<Movie[]>([]);

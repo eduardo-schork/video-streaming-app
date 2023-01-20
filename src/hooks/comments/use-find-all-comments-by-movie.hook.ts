@@ -1,11 +1,11 @@
 import HttpRequest from '@infra/http-request';
 import { useCallback, useEffect, useState } from 'react';
 
-import ApiRoutes from '@constants/api-routes';
+import ApiRoutes from '@shared/constants/api-routes';
 
-import { Comment, CommentApi, normalizeComment } from '@models/comment.model';
+import { Comment, CommentApi, normalizeComment } from '@shared/models/comment.model';
 
-const useFindAllCommentsByMovie = ({ movieId }: { movieId?: string }) => {
+const useFindAllCommentsByMovie = (movieId?: string) => {
   const [data, setData] = useState<Comment[]>([]);
 
   const fetchData = useCallback(async () => {
@@ -23,7 +23,7 @@ const useFindAllCommentsByMovie = ({ movieId }: { movieId?: string }) => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [movieId]);
 
   return {
     data,

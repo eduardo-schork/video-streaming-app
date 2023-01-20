@@ -19,3 +19,5 @@ yarn dev
 ```
 
 ## **Roadmap**
+
+- [ ] i18n

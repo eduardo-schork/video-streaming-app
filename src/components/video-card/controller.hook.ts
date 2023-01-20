@@ -1,4 +1,4 @@
-import { Movie } from '@models/movie.model';
+import { Movie } from '@shared/models/movie.model';
 import buildStaticFileUrl from '@utils/build-static-file-url.util';
 import { useEffect, useState } from 'react';
 

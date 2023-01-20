@@ -1,25 +1,12 @@
 import Text from '@components/text';
-import { Movie } from '@models/movie.model';
+import { Movie } from '@shared/models/movie.model';
 import VideoCard from '@components/video-card/video-card';
 import styled from 'styled-components';
 import Spacings from '@styles/spacings';
 import Colors from '@styles/colors';
+import t from '@shared/i18n';
 
 type RelatedVideosListProps = { onClick?: (id: string) => void; movies?: Movie[] };
-
-function RelatedVideosList({ movies, onClick }: RelatedVideosListProps) {
-  if (!movies) return <RelatedVideosContainer />;
-
-  return (
-    <RelatedVideosContainer>
-      {/* TODO i18n */}
-      <Text variant={'button'}>Related</Text>
-      {movies.map((movie) => (
-        <VideoCardSpaced key={movie.id} elevation={0} movie={movie} onClick={onClick} />
-      ))}
-    </RelatedVideosContainer>
-  );
-}
 
 const RelatedVideosContainer = styled.div`
   height: 100%;
@@ -37,5 +24,19 @@ const VideoCardSpaced = styled(VideoCard)`
     background-color: ${Colors.transparent};
   }
 `;
+
+function RelatedVideosList({ movies, onClick }: RelatedVideosListProps) {
+  if (!movies) return <RelatedVideosContainer />;
+
+  return (
+    <RelatedVideosContainer>
+      {/* TODO i18n */}
+      <Text variant={'button'}>{t('related')}</Text>
+      {movies.map((movie) => (
+        <VideoCardSpaced key={movie.id} elevation={0} movie={movie} onClick={onClick} />
+      ))}
+    </RelatedVideosContainer>
+  );
+}
 
 export default RelatedVideosList;

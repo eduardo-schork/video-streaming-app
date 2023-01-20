@@ -7,8 +7,8 @@ export type CommentApi = {
   deletedAt?: number;
   deletedBy?: string;
   text: string;
-  parent?: CommentApi;
   movieId: string;
+  subComments: CommentApi[];
 };
 
 export function normalizeComment(input: CommentApi): Comment {
@@ -19,8 +19,8 @@ export function normalizeComment(input: CommentApi): Comment {
     createdBy: input?.createdBy,
     deletedAt: input?.deletedAt,
     text: input?.text,
-    parent: input?.parent && normalizeComment(input?.parent),
     movieId: input.movieId,
+    subComments: input.subComments,
   };
 }
 
@@ -28,8 +28,8 @@ export type Comment = {
   id: string;
   movieId: string;
   text: string;
-  parent?: Comment;
   createdAt: number;
   createdBy: string;
   deletedAt?: number;
+  subComments: CommentApi[];
 };

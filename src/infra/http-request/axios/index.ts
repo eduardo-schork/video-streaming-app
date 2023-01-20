@@ -12,11 +12,7 @@ async function findAll({ apiPath, id }: { id?: string; apiPath: string }) {
   try {
     const url = apiPath + (id ? `/${id}` : '');
 
-    console.log({ url });
-
     const { data } = await axiosInstance.get(url);
-
-    console.log({ data });
 
     return data;
   } catch (error) {

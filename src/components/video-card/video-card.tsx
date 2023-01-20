@@ -1,7 +1,7 @@
+import { memo } from 'react';
 import VideoCardProps from './types';
 import { Container, InfoContainer, MovieImage, MovieImageContainer, MovieSubtitle, MovieTitle } from './styles';
 import useController from './controller.hook';
-import { memo } from 'react';
 
 function VideoCard({ className, movie, onClick, ...props }: VideoCardProps): JSX.Element {
   const { snapshotPath, handleOnMouseOver, handleOnMouseOut } = useController(movie);

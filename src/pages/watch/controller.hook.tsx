@@ -1,4 +1,4 @@
-import ApiRoutes from '@constants/api-routes';
+import ApiRoutes from '@shared/constants/api-routes';
 import useFindOneMovie from '@hooks/movies/use-find-one-movies.hook';
 import useFindOneMoviesByCategory from '@hooks/movies/use-find-one-movies-by-category.hook';
 import useFindAllCommentsByMovie from '@hooks/comments/use-find-all-comments-by-movie.hook';
@@ -17,10 +17,10 @@ const useController = () => {
 
   const videoPath = id && movie && `${import.meta.env.VITE_API_URL}${ApiRoutes.STREAM}/${movie.id}`;
 
-  const { data: commentsByMovie } = useFindAllCommentsByMovie({ movieId: id });
+  const { data: commentsByMovie } = useFindAllCommentsByMovie(id);
 
-  function handleOnClickMovie(id: string) {
-    navigate(`/watch/${id}`);
+  function handleOnClickMovie(movieId: string) {
+    navigate(`/watch/${movieId}`);
   }
 
   return { videoPath, movie, relatedVideos, handleOnClickMovie, commentsByMovie };
